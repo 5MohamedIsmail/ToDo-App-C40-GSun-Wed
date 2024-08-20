@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
     <style name="Base.Theme.ToDoAppC40GSunWed" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
@@ -17,4 +17,11 @@
         <item name="cornerSizeBottomLeft">30dp</item>
         <item name="cornerSizeBottomRight">30dp</item>
     </style>
+
+    <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textColor">@color/black3_bg</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
 </resources>

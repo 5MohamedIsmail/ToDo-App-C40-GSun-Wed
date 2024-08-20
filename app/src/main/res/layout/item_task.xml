@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/CalendarDayBg"
+    android:id="@+id/task_card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="12dp"
@@ -11,9 +12,42 @@
     app:contentPadding="18dp"
     app:strokeColor="@android:color/transparent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <com.zerobranch.layout.SwipeLayout
+        android:id="@+id/swipe_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        app:draggedItem="@id/draggable_view"
+        app:leftItem="@id/delete_view"
+        app:swipeDirection="right">
+
+    <LinearLayout
+        android:id="@+id/delete_view"
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical"
+        android:background="@color/red"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_delete"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/delete"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/draggable_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
 
         <View
             android:id="@+id/task_status_divider"
@@ -62,4 +96,5 @@
                 android:src="@drawable/ic_check" />
         </androidx.cardview.widget.CardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.zerobranch.layout.SwipeLayout>
 </com.google.android.material.card.MaterialCardView>

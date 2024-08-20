@@ -12,4 +12,10 @@
     <string name="required">Required</string>
     <string name="select_time_because_it_s_required">Select Time because it\'s Required</string>
     <string name="select_date_because_it_s_required">Select Date because it\'s required</string>
+    <string name="delete">delete</string>
+    <string name="edit_task">Edit Task</string>
+    <string name="this_is_a_title">This is a title</string>
+    <string name="task_details">Task Details</string>
+    <string name="select_time">Select time</string>
+    <string name="save_changes">Save Changes</string>
 </resources>

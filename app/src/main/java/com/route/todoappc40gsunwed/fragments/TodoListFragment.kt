@@ -29,6 +29,7 @@ import java.util.Locale
 class TodoListFragment : Fragment() {
     lateinit var binding: FragmentTodoListBinding
     lateinit var adapter: TaskAdapter
+    private val EDIT_TASK_REQUEST_CODE = 1
     var selectedDate: LocalDate? = null
     lateinit var calendar: Calendar
     override fun onCreateView(
@@ -45,17 +46,17 @@ class TodoListFragment : Fragment() {
         calendar = Calendar.getInstance()
         initWeekCalendarView()
         getTasksFromDatabase()
+
     }
 
     fun getTasksFromDatabase() {
         val tasks = TaskDatabase.getInstance(requireContext())
             .getTaskDao().getAllTasks()
-        adapter = TaskAdapter(tasks)
+        adapter = TaskAdapter(tasks.toMutableList())
         binding.tasksRecyclerView.adapter = adapter
     }
 
     fun initWeekCalendarView() {
-
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             bindWeekCalendarView()

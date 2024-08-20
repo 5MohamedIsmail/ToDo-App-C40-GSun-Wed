@@ -40,7 +40,9 @@ android {
 }
 
 dependencies {
+    implementation (libs.zerobranch.swipelayout)
     implementation(libs.androidx.room.runtime) // Room Dependency
+    implementation("androidx.room:room-ktx:2.6.1")
     ksp(libs.androidx.room.compiler)
     implementation(libs.calendar.view)
     implementation(libs.androidx.core.ktx) // Version Catalog
